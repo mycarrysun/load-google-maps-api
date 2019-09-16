@@ -5,7 +5,12 @@ const optionsKeys = ['channel', 'client', 'key', 'language', 'region', 'v']
 
 let promise = null
 
-module.exports = function (options = {}) {
+/**
+ *
+ * @param options
+ * @returns {Promise<*>}
+ */
+const loadGoogleMaps = function (options = {}) {
   promise =
     promise ||
     new Promise(function (resolve, reject) {
@@ -42,3 +47,5 @@ module.exports = function (options = {}) {
     })
   return promise
 }
+
+module.exports = loadGoogleMaps
